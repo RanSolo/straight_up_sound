@@ -1,0 +1,88 @@
+Koans outlined
+
+I   class AboutAsserts < Neo::Koan
+	i. def test_assert_truth
+    	a. assert true   
+	
+	ii.  def test_assert_with_message
+    	a. assert true, "This should be true -- Please fix this"
+  	
+  	iii. def test_assert_equality
+    	a.  expected_value = 2
+    	    actual_value = 1 + 1
+		    assert expected_value == actual_value
+	
+	iv.  def test_a_better_way_of_asserting_equality
+    	a.	expected_value = 2
+    		actual_value = 1 + 1
+		    assert_equal expected_value, actual_value
+  	
+  	v. 		def test_fill_in_values
+   		a.	 assert_equal 2, 1 + 1
+
+II 	class AboutNil < Neo::Koan
+  	i.	def test_nil_is_an_object
+    	a 	assert_equal true, nil.is_a?(Object), "Unlike NULL in other languages"
+
+  	ii.	def test_you_dont_get_null_pointer_errors_when_calling_methods_on_nil
+    # What happens when you call a method that doesn't exist.  The
+    # following begin/rescue/end code block captures the exception and
+    # makes some assertions about it.
+    begin
+    iii.  nil.some_method_nil_doesnt_know_about
+    rescue Exception => ex
+      # What exception has been caught?
+		a.	assert_equal NoMethodError, ex.class
+      # What message was attached to the exception?
+      # (HINT: replace __ with part of the error message.)
+      		assert_match(/undefined method/, ex.message)
+
+	iii  def test_nil_has_a_few_methods_defined_on_it
+   		a.	assert_equal true, nil.nil?
+    		assert_equal "", nil.to_s
+    		assert_equal "nil", nil.inspect
+
+III class AboutObjects < Neo::Koan
+  	i 	def test_everything_is_an_object
+    	a. 	assert_equal true, 1.is_a?(Object)
+    		assert_equal true, 1.5.is_a?(Object)
+   			assert_equal true, "string".is_a?(Object)
+    		assert_equal true, nil.is_a?(Object)
+    		assert_equal true, Object.is_a?(Object)
+
+  	ii 	def test_objects_can_be_converted_to_strings
+    	a.	assert_equal "123", 123.to_s
+   		 	assert_equal "", nil.to_s
+ 
+	iii def test_objects_can_be_inspected
+    	a.	assert_equal "123", 123.inspect
+    		assert_equal "nil", nil.inspect
+
+  	iv 	def test_every_object_has_an_id
+    	a. 	obj = Object.new
+    assert_equal Fixnum, obj.object_id.class
+  end
+
+  def test_every_object_has_different_id
+    obj = Object.new
+    another_obj = Object.new
+    assert_equal __, obj.object_id != another_obj.object_id
+  end
+
+  def test_small_integers_have_fixed_ids
+    assert_equal __, 0.object_id
+    assert_equal __, 1.object_id
+    assert_equal __, 2.object_id
+    assert_equal __, 100.object_id
+
+    # THINK ABOUT IT:
+    # What pattern do the object IDs for small integers follow?
+  end
+
+  def test_clone_creates_a_different_object
+    obj = Object.new
+    copy = obj.clone
+
+    assert_equal __, obj           != copy
+    assert_equal __, obj.object_id != copy.object_id
+  
