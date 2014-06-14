@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates :username, uniqueness: true
+
 
   has_many :user_songs
   has_many :songs, through: :user_songs
