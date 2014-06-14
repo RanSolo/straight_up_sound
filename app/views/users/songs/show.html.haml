@@ -1,11 +1,14 @@
 %h1= @song.title
 - @song.comments.each do |comment|
-  %p= comment.body
+  %p(class="#{comment.post_class.downcase}")
+    = comment.body
+  - if comment.post.is_a? Song
+    %small= comment.post.title
+  - elsif comment.post.is_a? Recording
+    %small= comment.post.file
 
 %h3 Recordings
 %ul
-  - @recordings.each do |recording|
-    %li #{recording.file} #{recording.submitted_at}
-    %ul
-      - recording.comments.each do |recording_comment|
-        %p= recording_comment.body
+  - @song.recordings.each do |recording|
+    %li #{recording.file}
+    %small #{recording.submitted_at}

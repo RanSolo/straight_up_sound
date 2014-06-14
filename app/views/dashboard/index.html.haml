@@ -10,8 +10,7 @@
 #songs
   %h3 Songs
   - @songs.each do |song|
-    %p= link_to song.title, users_song_path(song.id)
-    %p= song.comment
+    %p= link_to "#{song.title} #{song.comments.count}", users_song_path(song.id)
 
 #recordings
   %h3 Recordings
