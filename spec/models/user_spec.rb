@@ -1,5 +1,6 @@
 require 'spec_helper'
-
+require 'user'
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many :songs }
+  it { should validate_uniqueness_of :email }
 end
