@@ -1,0 +1,15 @@
+%h1 Dashboard
+= link_to "sign out", destroy_user_session_path, method: :delete
+
+#users
+  %h3 Users
+  - @users.each do |user|
+    %p #{user.first_name} #{user.last_name}
+    %p= user.phone
+    %p= user.email
+
+#songs
+  %h3 Songs
+  - @songs.each do |song|
+    %p= song.title
+    %p= song.comment
