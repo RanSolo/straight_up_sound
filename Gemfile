@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 gem 'pg'
+gem 'devise', '~> 3.2.4'
+gem 'haml', '~> 4.0.5'
+gem 'pry', '~> 0.10.0'
 gem 'rails_12factor', '0.0.2'
 
 group :development, :test do
@@ -15,7 +18,7 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
-# Use SCSS for stylesheets
+
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.1.1'
