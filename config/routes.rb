@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'dashboard#index'
   resources :users
+  namespace :users do
+    resources :songs
+    resources :recordings
+  end
   resources :dashboard, only: :index
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

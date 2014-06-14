@@ -1,0 +1,1 @@
+rails g migration create_user_recordings

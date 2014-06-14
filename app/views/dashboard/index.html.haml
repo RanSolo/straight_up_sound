@@ -1,7 +1,7 @@
 %h1 Dashboard
 = link_to "sign out", destroy_user_session_path, method: :delete
 
-#users
+#user
   %h3 User Profile
   %p #{@user.first_name} #{@user.last_name}
   %p= @user.phone
@@ -10,5 +10,12 @@
 #songs
   %h3 Songs
   - @songs.each do |song|
-    %p= song.title
+    %p= link_to song.title, users_song_path(song.id)
     %p= song.comment
+
+#recordings
+  %h3 Recordings
+  - @recordings.each do |recording|
+    %p= recording.submitted_at
+    %p= recording.play_count
+    %p= recording.file

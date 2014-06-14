@@ -1,0 +1,7 @@
+%h1= @song.title
+%p= @song.comment
+
+%h3 Recordings
+%ul
+  - @song.recordings.each do |recording|
+    %li #{recording.file} #{recording.submitted_at}
