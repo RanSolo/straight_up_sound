@@ -1,4 +1,11 @@
 #user
+  %h1 User
   %p #{@user.first_name} #{@user.last_name}
   %p= @user.phone
   %p= @user.email
+
+#songs
+  %h1 Songs
+  - @user.songs.each do |song|
+    %p= song.title
+    %p= song.comment
