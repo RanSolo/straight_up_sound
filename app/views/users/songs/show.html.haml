@@ -1,7 +1,11 @@
 %h1= @song.title
-%p= @song.comment
+- @song.comments.each do |comment|
+  %p= comment.body
 
 %h3 Recordings
 %ul
-  - @song.recordings.each do |recording|
+  - @recordings.each do |recording|
     %li #{recording.file} #{recording.submitted_at}
+    %ul
+      - recording.comments.each do |recording_comment|
+        %p= recording_comment.body
