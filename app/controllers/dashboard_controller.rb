@@ -1,8 +1,9 @@
 class DashboardController < ApplicationController
 
   def index
-    @users = User.all
-    @songs = Song.all
+    @user = current_user
+    # @songs = Song.all    user = User.find(params[:id])
+    @songs = current_user.songs
   end
 
 end

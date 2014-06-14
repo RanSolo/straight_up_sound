@@ -2,11 +2,10 @@
 = link_to "sign out", destroy_user_session_path, method: :delete
 
 #users
-  %h3 Users
-  - @users.each do |user|
-    %p= link_to "#{user.first_name} #{user.last_name}", user_path(user.id)
-    %p= user.phone
-    %p= user.email
+  %h3 User Profile
+  %p #{@user.first_name} #{@user.last_name}
+  %p= @user.phone
+  %p= @user.email
 
 #songs
   %h3 Songs
