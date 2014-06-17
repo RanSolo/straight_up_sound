@@ -10,6 +10,11 @@
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
   %div
+    = f.label :username
+    %br/
+    = f.username_field :username
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+  %div
     = f.label :password
     %i (leave blank if you don't want to change it)
     %br/

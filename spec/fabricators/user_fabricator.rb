@@ -3,6 +3,7 @@ Fabricator(:user) do
   last_name { sequence(:last_name) { |i| "user#{i}" } }
   email { sequence(:email) { |i| "user#{i}@example.com" } }
   password 'password'
+  password_confirmation 'password'
   producer true
   # songs(count: 2)
 end

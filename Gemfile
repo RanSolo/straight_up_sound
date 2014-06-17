@@ -32,7 +32,7 @@ group :development, :test do
   gem 'email_spec'
   gem 'letter_opener'
   gem 'rspec-rails'
-  gem 'rspec'
+  gem 'rspec', '2.14.1'
 end
 
 group :test do

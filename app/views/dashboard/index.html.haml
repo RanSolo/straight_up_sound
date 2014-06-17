@@ -7,9 +7,15 @@
   %p= @user.email
 
 #songs
+  -# = link_to "Create a song", songs_path
   %h3 Songs
+  -# = simple_form_for @song do |f|
+  -#   = f.input :song_title, placeholder: "song title", autofocus: true
+    -# = f.input :lyric, placeholder: "lyric"
+  -#   = f.input :password, placeholder: "password"
+  -#   = f.button :submit, "Create song"
   - @songs.each do |song|
-    %p= link_to "#{song.title} #{song.comments.count}", users_song_path(song.id)
+    %p link_to "#{song.title} #{song.comments.count}", songs_path(song.id)
 
 #recordings
   %h3 Recordings
