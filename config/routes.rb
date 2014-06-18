@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'dashboard#index'
   resources :users
-  namespace :users do
-    resources :songs
-    resources :recordings
-  end
+  resources :songs
+  resources :recordings
+  resources :comments
   resources :dashboard, only: :index
 
   # The priority is based upon order of creation: first created -> highest priority.

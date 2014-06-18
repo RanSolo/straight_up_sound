@@ -18,7 +18,7 @@ feature "User visits dashboard page" do
   end
 
   scenario "User visits someone elses profile page" do
-    login_as randy
+    login_as johnny
     visit user_path(johnny)
     page.should have_content "neely@neely.com"
     page.should_not have_content "ransolo@me.com"

@@ -2,8 +2,7 @@ class DashboardController < ApplicationController
 
   def index
     @user = current_user
-    @songs = current_user.songs
-    @recordings = current_user.recordings
+    @songs = Song.all
+    @recordings = Recording.all
   end
-
 end

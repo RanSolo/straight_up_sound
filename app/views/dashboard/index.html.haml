@@ -2,20 +2,17 @@
 
 #user
   %h3 User Profile
-  %p #{@user.first_name} #{@user.last_name}
+  %p= @user.last_name
+  %p= @user.username
   %p= @user.phone
   %p= @user.email
 
 #songs
-  -# = link_to "Create a song", songs_path
-  %h3 Songs
-  -# = simple_form_for @song do |f|
-  -#   = f.input :song_title, placeholder: "song title", autofocus: true
-    -# = f.input :lyric, placeholder: "lyric"
-  -#   = f.input :password, placeholder: "password"
-  -#   = f.button :submit, "Create song"
+  %h3 Songs booty
   - @songs.each do |song|
-    %p link_to "#{song.title} #{song.comments.count}", songs_path(song.id)
+    %p= song.title
+    -# %p link_to song.title, songs_path(song.id)
+  = render "users/shared/song_form"
 
 #recordings
   %h3 Recordings
