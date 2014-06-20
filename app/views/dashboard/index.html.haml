@@ -10,13 +10,12 @@
 #songs
   %h3 Songs booty
   - @songs.each do |song|
-    %p= song.title
-    -# %p link_to song.title, songs_path(song.id)
-  = render "users/shared/song_form"
+    %p= link_to song.title, song_path(song.id)
+  = render "shared/song_form"
 
 #recordings
   %h3 Recordings
   - @recordings.each do |recording|
-    %p= recording.submitted_at
+    %p= recording.created_at
     %p= recording.play_count
     %p= recording.file
