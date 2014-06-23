@@ -13,16 +13,71 @@
  *= require_tree .
  *= require_self
  */
+/*$primary-color: #F9FF4C;
+$secondary-color: #838700;
+$third-color: #C5CC00;
+$fourth-color: #7B7F00;*/
+body {
+  background: #cfb405;
+}
+
+header {
+  margin: auto;
+  border: 5px solid;
+  marging: auto;
+  display: inline-block;
+  width: 90%;
+  }
+
+.nav{
+  display: inline-block;
+  color: white;
+  /*margin: auto;*/
+}
+
+.navButton {
+  border: 1px solid blue;
+  background: rgba(177, 86, 86, 0.84);
+}
+
+.devise_navigation .main_navigation{
+display: inline-block;
+border: 2px black solid;
+list-style: none;
+}
+
+.devise_navigation{
+  float: right;
+  margin-right: 10%;
+}
+
+.main_navigation{
+  float: left;
+  margin-left: 10%;
+}
+
 .song {
   background: #e1e1e1;
   padding: 10px;
-  width: 75%;
+  width: 40%;
   margin-left: 25%;
 }
+
 .recording {
   background: #333;
   color: #fff;
   padding: 10px;
-  width: 50%;
+  width: 40%;
   margin-left: 50%;
+}
+
+.clear{
+  display: block;
+  clear: both;
+}
+
+.container{
+  clear: both;
+  margin: auto;
+  width: 85%;
 }

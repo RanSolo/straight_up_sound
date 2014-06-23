@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   #   resources :products do
   #     member do
   #       get 'short'
-  #       post 'toggle'
+  #       song 'toggle'
   #     end
   #
   #     collection do
@@ -50,9 +50,9 @@ Rails.application.routes.draw do
 
   # Example resource route with concerns:
   #   concern :toggleable do
-  #     post 'toggle'
+  #     song 'toggle'
   #   end
-  #   resources :posts, concerns: :toggleable
+  #   resources :songs, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:

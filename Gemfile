@@ -1,5 +1,5 @@
 ruby '2.1.1'
-#ruby-gemset=squmblr
+#ruby-gemset=straight_up_sound
 source 'https://rubygems.org'
 
 gem 'carrierwave'
@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'zurb-foundation'
+gem 'acts_as_commentable'
 
 # gem 'unicorn'
 

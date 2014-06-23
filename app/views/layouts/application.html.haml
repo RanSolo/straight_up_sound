@@ -7,15 +7,16 @@
     = csrf_meta_tags
   %body
     %header
-      %ul.devise_navigation
-        - if user_signed_in?
-          %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
-        - else
-          %li= link_to 'Sign in', new_user_session_path
-      %ul.main_navigation
-        %li= link_to 'songs', songs_path
-        %li= link_to 'dashboard', root_path
-      
+      .container
+        %ul.devise_navigation
+          - if user_signed_in?
+            %li.nav= link_to 'Sign out', destroy_user_session_path, method: 'delete'
+          - else
+            %li.nav= link_to 'Sign in', new_user_session_path
+        %ul.main_navigation
+          %li.nav.navButton= link_to 'dashboard', root_path
+          %li.nav.navButton= link_to 'songs', songs_path
+          %li.nav.navButton= link_to 'straight up sound', "http://www.straightupsoundstudio.com"
     .alert= alert
     .notice= notice
-  = yield
+    = yield

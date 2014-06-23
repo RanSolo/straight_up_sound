@@ -1,21 +1,22 @@
-%h1 Dashboard
+.container
+  %h1 Dashboard
 
-#user
-  %h3 User Profile
-  %p= @user.last_name
-  %p= @user.username
-  %p= @user.phone
-  %p= @user.email
+  #user
+    %h3 User Profile
+    %p= @user.last_name
+    %p= @user.username
+    %p= @user.phone
+    %p= @user.email
 
-#songs
-  %h3 Songs booty
-  - @songs.each do |song|
-    %p= link_to song.title, song_path(song.id)
-  = render "shared/song_form"
+  #songs
+    %h3 Songs booty
+    - @songs.each do |song|
+      %p= link_to song.title, song_path(song.id)
+    = render "shared/song_form"
 
-#recordings
-  %h3 Recordings
-  - @recordings.each do |recording|
-    %p= recording.created_at
-    %p= recording.play_count
-    %p= recording.file
+  #recordings
+    %h3 Recordings
+    - @recordings.each do |recording|
+      %p= recording.created_at
+      %p= recording.play_count
+      %p= recording.file

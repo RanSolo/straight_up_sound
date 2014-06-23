@@ -1,4 +1,20 @@
 class Comment < ActiveRecord::Base
+
+  include ActsAsCommentable::Comment
+
+  belongs_to :commentable, :polymorphic => true
+  belongs_to :recording
+  belongs_to :song
   belongs_to :user
-  belongs_to :post, polymorphic: true, foreign_type: 'post_class'
+  #
+  # validates_presence_of :comment
+  # validates_presence_of :recording, :song
+  # validates_presence_of :user
+  default_scope -> { order('created_at ASC') }
+
+  # NOTE: install the acts_as_votable plugin if you
+  # want user to vote on the quality of comments.
+  #acts_as_voteable
+
+  # NOTE: Comments belong to a user
 end
