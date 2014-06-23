@@ -1,0 +1,8 @@
+-# =render comments
+= simple_form_for Comment.new, html: {class: 'form-inline'} do |f|
+  .form-inputs
+    .row
+      .col-md-12
+        = f.input :comment, label: "Add Your Comment", input_html: {class: 'editable'}
+  .form-actions
+    = f.button :submit, "Create Comment"

@@ -1,0 +1,10 @@
+.container
+  #recording_comment_form
+
+    =simple_form_for Comment.new, :method => :post do |f|
+      =f.input :comment, as: :text
+      =f.input :commentable_type, :as => :hidden, :input_html => {:value => "Recording"}
+      =f.input :commentable_id, :as => :hidden, :input_html => {:value => @song.id}
+      =f.input :title, :as => :hidden, :input_html => {:value => recording.name}
+      =f.input :user_id, :as => :hidden, :input_html => {:value => @song.id}
+      =f.submit "make comment"

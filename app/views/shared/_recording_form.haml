@@ -1,0 +1,8 @@
+.container
+  %p= @song.id
+  =simple_form_for Recording.new, :html => { :multipart => true }do |f|
+    =f.input :name, :required => true
+    =f.label "file"
+    =f.file_field :file, :input_html => {:label => "File"}
+    =f.input :song_id, :as => :hidden, :input_html => {:value => @song.id}
+    =f.submit "create recording"

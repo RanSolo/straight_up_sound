@@ -1,0 +1,19 @@
+.container
+  %h1= @song.title
+  - @song.comments.each do |comment|
+    %p(class="#{comment.song_class.downcase}")
+      = comment.comment
+    - if comment.song.is_a? Song
+      %small= comment.song.title
+    - elsif comment.song.is_a? Recording
+      %small= comment.song.file
+
+  %h2 Add recording
+  #recording_form
+  = render "shared/recording_form"
+  %h3 Recordings
+  - @song.recordings.each do |recording|
+    %li #{recording.file}
+    %small #{recording.created_at}
+
+  -# = audio_tag song.recording_url.to_s
