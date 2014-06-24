@@ -1,10 +1,11 @@
 .container
-  %h1 Dashboard
+  .user_dash
+    %p #{@user.username.upcase}'s
+    %h1 Dashboard
 
   #user
     %h3 User Profile
-    %p= @user.last_name
-    %p= @user.username
+    %p #{@user.last_name} #{@user.last_name}'s
     %p= @user.phone
     %p= @user.email
 

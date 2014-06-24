@@ -17,14 +17,14 @@
   #recordings_index
     - @song.recordings.each do |recording|
       %p= recording.name
+      <audio controls>
+      <source src="#{recording.file_url}" type="audio/ogg">
+      <source src="horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
       .song
         = render partial: "shared/rec_comment_form", locals: {recording: recording}
-        = audio_tag recording.file.to_s
-      <audio controls>
-      <source src="horse.mp3" type="audio/mp3">
-      <source src="horse.mp3" type="audio/mp3">
-      Your browser does not support the audio tag.
-      </audio>
+
       %small #{recording.created_at}
       %h4 Comments:
       #comment_show
@@ -34,11 +34,11 @@
               posted #{time_ago_in_words(c.created_at)} ago
               %p
             = h(c.comment)
-            %p
+            -# %p
 
 
-      -# =link_to "<<Back", songs_path
-      -# =link_to "Edit", edit_song_path(@song)
+      =link_to "<<Back", songs_path
+      =link_to "Edit", edit_song_path(@song.id)
       -# = simple_form_for Comment.new do |f|
       -#   = f.input :comment, as: :text
       -#   = f.hidden_field :user_id, :value => current_user.id
