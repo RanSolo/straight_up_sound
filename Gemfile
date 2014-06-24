@@ -22,8 +22,8 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'zurb-foundation'
 gem 'acts_as_commentable'
-
-# gem 'unicorn'
+gem 'rails_12factor'
+gem 'unicorn'
 
 group :development do
   gem 'spring'

@@ -6,6 +6,7 @@ class SongsController < UsersController
 
   def index
     @songs = Song.all
+    @recordings = Recordings.all
   end
 
   def create
@@ -17,14 +18,6 @@ class SongsController < UsersController
       render :new
     end
   end
-
-
-  # def commentable
-  #   comment = commentable.comments.create
-  #   comment.title = "First comment."
-  #   comment.comment = "This is the first comment."
-  #   comment.save
-  # end
 
   def show
     @song = Song.find(params[:id])

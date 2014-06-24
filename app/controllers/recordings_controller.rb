@@ -22,6 +22,10 @@ class RecordingsController < ApplicationController
     @recording = Recording.find(params[:id])
   end
 
+  def play
+    
+  end
+
   private
 
   def recording_params
