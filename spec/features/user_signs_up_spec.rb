@@ -4,10 +4,10 @@ feature "User signs up" do
   scenario "happy path" do
     visit '/'
     click_link "Sign up"
-    fill_in "Email", with: "joe@example.com"
-    fill_in "Username", with: "joie"
-    fill_in "Password", with: "mypassword"
-    fill_in "Password confirmation", with: "mypassword"
+    fill_in "email", with: "joe@example.com"
+    fill_in "username", with: "joie"
+    fill_in "password", with: "mypassword"
+    fill_in "retype password", with: "mypassword"
     click_button "Sign up"
     page.should have_content "Dashboard"
     page.should_not have_link("Sign up")
@@ -34,29 +34,29 @@ feature "User signs up" do
     Fabricate(:user, email: "joe@example.com", username: "joe")
     visit '/'
     click_link "Sign up"
-    fill_in "Email", with: "joe@example.com"
-    fill_in "Password", with: "mypassword"
-    fill_in "Password confirmation", with: "notthesame"
+    fill_in "email", with: "joe@example.com"
+    fill_in "password", with: "mypassword"
+    fill_in "retype password", with: "notthesame"
     click_button "Sign up"
     page.should_not have_content "Dashboard"
     page.should have_content "Your account could not be created"
 
-    page.should have_error("has already been taken", on: "Email")
-    page.should have_error("doesn't match Password", on: "Password confirmation")
-    page.should have_error("has already been taken", on: "Username")
+    page.should have_error("has already been taken", on: "email")
+    page.should have_error("doesn't match Password", on: "retype password")
+    page.should have_error("has already been taken", on: "username")
   end
 
   scenario "failed signup because invalid characters in username" do
     visit '/'
     click_link "Sign up"
-    fill_in "Email", with: "joe@example.com"
-    fill_in "Username", with: "joe@example"
-    fill_in "Password", with: "mypassword"
-    fill_in "Password confirmation", with: "mypassword"
+    fill_in "email", with: "joe@example.com"
+    fill_in "username", with: "joe@example"
+    fill_in "password", with: "mypassword"
+    fill_in "retype password", with: "mypassword"
     click_button "Sign up"
     page.should_not have_content "Dashboard"
     page.should have_content "Your account could not be created"
-    page.should have_error("can only contain letters", on: "Username")
+    page.should have_error("can only contain letters", on: "username")
   end
 
   scenario "user receives welcome email" do
