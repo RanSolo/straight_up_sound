@@ -1,6 +1,5 @@
-.container
-  %h4 Create song
-
+.song
   =simple_form_for Song.new do |f|
-    =f.input :title
+    %p Create song
+    =f.input :title, label: false, placeholder: "Title"
     =f.submit "create song"

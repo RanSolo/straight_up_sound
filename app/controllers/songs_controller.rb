@@ -6,7 +6,6 @@ class SongsController < UsersController
 
   def index
     @songs = Song.all
-    @recordings = Recordings.all
   end
 
   def create

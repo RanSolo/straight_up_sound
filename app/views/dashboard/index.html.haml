@@ -1,23 +1,22 @@
-.container
-  .user_dash
-    %p #{@user.username.upcase}'s
-    %h1 Dashboard
-
-  #user
-    %h3 User Profile
-    %p #{@user.last_name} #{@user.last_name}'s
-    %p= @user.phone
-    %p= @user.email
-
-  #songs
-    %h3 Songs booty
+#user_dash
+  %p #{@user.username.upcase}'s Dashboard: #{@user.last_name} #{@user.last_name} #{@user.phone} #{@user.email}
+  #songs.sectionWrapper
+    %h3 Songs
     - @songs.each do |song|
       %p= link_to song.title, song_path(song.id)
+  .create_song.sectionWrapper
     = render "shared/song_form"
-
-  #recordings
-    %h3 Recordings
-    - @recordings.each do |recording|
-      %p= recording.created_at
-      %p= recording.play_count
-      %p= recording.file
+  .clear
+    -# #recordings.sectionWrapper
+    -#   - @songs.each do |song|
+    -#     - song.recordings.each do |recording|
+    -#       %p= song.title
+    -#       %h5 Recordings
+    -#       %p= recording.created_at
+    -#       %p= recording.play_count
+    -#       .player
+    -#         <audio controls>
+    -#         <source src="#{recording.file_url}" type="audio/mp3">
+    -#         <source src="#{recording.file_url}" type="audio/mpeg">
+    -#         Your browser does not support the audio element.
+    -#         </audio>

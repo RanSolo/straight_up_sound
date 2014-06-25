@@ -1,14 +1,14 @@
-- if resource.errors
-  .alert Your account could not be created.
+.container
+  - if resource.errors
+    .alert Your account could not be created.
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = f.input :email, placeholder: "email", autofocus: true
+    = f.input :phone, placeholder: "phone"
+    = f.input :username, placeholder: "username"
+    = f.input :first_name, placeholder: "first name"
+    = f.input :last_name, placeholder: "last name"
+    = f.input :password, placeholder: "password"
+    = f.input :password_confirmation, placeholder: "retype password"
+    = f.button :submit, "Sign up"
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.input :email, placeholder: "email", autofocus: true
-  = f.input :phone, placeholder: "phone"
-  = f.input :username, placeholder: "username"
-  = f.input :first_name, placeholder: "first name"
-  = f.input :last_name, placeholder: "last name"
-  = f.input :password, placeholder: "password"
-  = f.input :password_confirmation, placeholder: "retype password"
-  = f.button :submit, "Sign up"
-
-= render "devise/shared/links"
+  = render "devise/shared/links"

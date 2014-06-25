@@ -24,6 +24,7 @@ gem 'zurb-foundation'
 gem 'acts_as_commentable'
 gem 'rails_12factor'
 gem 'unicorn'
+gem 'dinosaurus'
 
 group :development do
   gem 'spring'

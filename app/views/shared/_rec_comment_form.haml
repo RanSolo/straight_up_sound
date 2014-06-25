@@ -1,6 +1,5 @@
 .container
   #recording_comment_form
-
     =simple_form_for Comment.new, :method => :post do |f|
       =f.input :comment, as: :text
       =f.input :commentable_type, :as => :hidden, :input_html => {:value => "Recording"}

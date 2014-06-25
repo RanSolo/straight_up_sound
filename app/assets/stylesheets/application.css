@@ -1,59 +1,201 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+
+
 /*$primary-color: #F9FF4C;
 $secondary-color: #838700;
 $third-color: #C5CC00;
 $fourth-color: #7B7F00;*/
-body {
-  background: #cfb405;
+a, a:visited{
+  text-decoration: none;
+  color: #700B0E;
+  /*background-color: #700B0E;*/
 }
 
-header {
+a:hover, a:active{
+  text-decoration: underline;
+  color: #FEC428;
+}
+body {
+  background: url(skin.jpg) 0 0 repeat ;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bolder;
+  /*color: #bbff00;*/
+  margin: 0px;
+  padding: 0px;
+}
+
+.sectionWrapper{
+
+}
+#user{
   margin: auto;
-  border: 5px solid;
-  marging: auto;
   display: inline-block;
-  width: 90%;
-  }
+  width: 103%;
+  padding: 5px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  position: relative;
+  -webkit-animation: mythird 2s; /* Chrome, Safari, Opera */
+  animation: mythird 2s;
+}
+
+@-webkit-keyframes mythird {
+    0%     {background: #dcdcdc; left:0px; top:500px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+.player{
+}
+
+#keys, #values{
+  position: relative;
+  bottom: 40px;
+  display: inline-block;
+}
+
+.create_song{
+  float: right;
+  width: 50%;
+}
+
+#songs{
+  clear: both;
+  float: left;
+  display: inline-block;
+  padding-left: 2%;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  position: relative;
+  -webkit-animation: myfifth 2s; /* Chrome, Safari, Opera */
+  animation: myfifth 2s;
+  animation-direction: alternate;
+}
+/**/
+@-webkit-keyframes myfifth {
+    0%     {background: #dcdcdc; right:500px; top:500px;}
+    100%   {background: rgba(237, 209, 26, 0.22); right:0px; top:0px;}
+}
+header {
+  padding-bottom: 2px;
+  background: #FEC428;
+  margin: auto;
+  border: 1px solid;
+  marging: auto;
+  text-align: center;
+  list-style: none;
+  /*-webkit-border-radius: 130px;
+  -webkit-border-bottom-right-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -moz-border-radius: 130px;
+  -moz-border-radius-bottomright: 30px;
+  -moz-border-radius-bottomleft: 30px;
+  border-radius: 130px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: rgba(178, 177, 177, 0.45);*/
+  position: relative;
+  -webkit-animation: mysecond 2s; /* Chrome, Safari, Opera*/
+  animation: mythird 2s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mysecond {
+    0%    {background: #dcdcdc; left:900px; top:0px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
 
 .nav{
   display: inline-block;
-  color: white;
-  /*margin: auto;*/
+  /*float: right;*/
+  list-style: none;
+  position: relative;
+  -webkit-animation: mythird 2s;
+  animation: mythird 2s;
+}
+
+@-webkit-keyframes mythird {
+    0%    {background: #dcdcdc; left:900px; top:0px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+#results{
+  text-align: center;
+  /*display: inline-block;*/
+}
+
+.user2{
+  border: 1px solid;
+  float: right;
+  display: inline-block;
+  position: relative;
+  bottom: 10px;
+  -webkit-animation: myfourth 2s; /* Chrome, Safari, Opera */
+  animation: myfourth 2s;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+
+@-webkit-keyframes myfourth {
+  0%    {background: #dcdcdc; left:500px; top:510px;}
+  100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+.user_dash{
+  text-align: center;
+  margin: auto;
+  width: 90%;
+  display: inline-block;
+  padding: 2px;
+  position: relative;
+  -webkit-animation: myfourth 2s; /* Chrome, Safari, Opera */
+  animation: myfourth 2s;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+
+@-webkit-keyframes myfourth {
+  0%    {background: #dcdcdc; top:510px;}
+  100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
 }
 
 .navButton {
-  border: 1px solid blue;
-  background: rgba(177, 86, 86, 0.84);
+  /*background-color: #700B0E;*/
+  padding: 0px 7px 1px 7px;
+  border: 1px solid;
+  -webkit-border-radius: 70px;
+  -webkit-border-bottom-right-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -moz-border-radius: 70px;
+  -moz-border-radius-bottomright: 30px;
+  -moz-border-radius-bottomleft: 30px;
+  border-radius: 70px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;  }
 }
 
+.navButton:hover {
+  background: #700B0E;
+}
+/*li.nav.navButton:active{
+background-color: #700B0E;
+  }*/
+
 .devise_navigation .main_navigation{
-display: inline-block;
-border: 2px black solid;
-list-style: none;
+  /*display: inline-block;*/
+  border: 2px black solid;
 }
 
 .devise_navigation{
   float: right;
-  margin-right: 10%;
 }
 
 .main_navigation{
   float: left;
-  margin-left: 10%;
+  margin: auto;
 }
 
 .song {
@@ -79,5 +221,28 @@ list-style: none;
 .container{
   clear: both;
   margin: auto;
-  width: 85%;
+  padding: 2px;
+  max-width:1000px;
+  position: relative;
+  -webkit-animation: myfifth 2s; /* Chrome, Safari, Opera */
+  animation: myfifth 2s;
+  animation-direction: alternate;
+}
+
+  @-webkit-keyframes myfifth {
+    0%     {background: #dcdcdc; left:500px; top:000px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+.page_content{
+  background: white;
+  padding: 20px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+body {
+    -webkit-animation: myfirst 225s; /* Chrome, Safari, Opera */
+    animation: myfirst 225s;
 }
