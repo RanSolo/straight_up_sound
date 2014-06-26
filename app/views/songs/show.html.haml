@@ -4,39 +4,38 @@
     %p= @song.writers
     = simple_format(@song.lyric)
     = render "shared/comment_form"
-  .sectionWrapper
-    #comment_show
-    - @song.comments.each do |c|
-      - if c.commentable_type == "Songs"
-        %strong
-          posted #{time_ago_in_words(c.created_at)} ago
-          %p
-        = h(c.comment)
-
-  %h2 Add recording
-  #recording_form
-  = render "shared/recording_form"
-  %h3 Recordings booty
-  #recordings_index
-    - @song.recordings.each do |recording|
-      %p= recording.name
-      <audio controls="controls">
-      <source src="#{recording.file_url}" type="audio/mp3">
-      <source src="#{recording.file_url}" type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio>
-      .song
-        = render partial: "shared/rec_comment_form", locals: {recording: recording}
-
-      %small #{recording.created_at}
-      %h4 Comments:
+    .sectionWrapper
       #comment_show
-        - @song.comments.each do |c|
-          - if c.commentable_type == "Recording" && c.title == recording.name
-            %strong
-              posted #{time_ago_in_words(c.created_at)} ago
-              %p
-            = h(c.comment)
-
-      =link_to "<<Back", songs_path
-      =link_to "Edit", edit_song_path(@song.id)
+      - @song.comments.each do |c|
+        - if c.commentable_type == "Songs"
+          %strong
+            posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
+            %p
+          = h(c.comment)
+  .sectionWrapper
+    %h2 Add recording
+    #recording_form
+    = render "shared/recording_form"
+  .sectionWrapper
+    %h3 Recordings booty
+    #recordings_index
+      - @song.recordings.each do |recording|
+        %p= recording.name
+        <audio controls="controls">
+        <source src="#{recording.file_url}" type="audio/mp3">
+        <source src="#{recording.file_url}" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        .song
+          = render partial: "shared/rec_comment_form", locals: {recording: recording}
+        %small #{recording.created_at}
+        %h4 Comments:
+        #comment_show
+          - @song.comments.each do |c|
+            - if c.commentable_type == "Recording" && c.title == recording.name
+              %strong
+                posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
+                %p
+              = h(c.comment)
+      -# =link_to "<<Back", songs_path
+      -# =link_to "Edit", edit_song_path(@song.id)
