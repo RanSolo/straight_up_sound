@@ -1,0 +1,246 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+a, a:visited{
+  text-decoration: none;
+  color: #700B0E;
+  /*background-color: #700B0E;*/
+}
+
+a:hover, a:active{
+  text-decoration: underline;
+  color: #FEC428;
+}
+
+body {
+  background: asset-url('skin.jpg') 0 0 repeat;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bolder;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sectionWrapper{
+  /*float: right;*/
+  display: inline-block;
+  padding:20%;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  position: relative;
+  -webkit-animation: myfifth 2s; /* Chrome, Safari, Opera */
+  animation: myfifth 2s;
+  animation-direction: alternate;
+  background: rgba(228, 228, 228, 0.90);
+  padding: 10px;
+  min-width: 30%;
+}
+
+#songs{
+  float: right;
+  margin-right: 10%;
+}
+
+#user{
+  margin: auto;
+  display: inline-block;
+  width: 103%;
+  padding: 5px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  position: relative;
+  -webkit-animation: mythird 2s; /* Chrome, Safari, Opera */
+  animation: mythird 2s;
+}
+
+@-webkit-keyframes mythird {
+    0%     {background: #dcdcdc; left:0px; top:500px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+.player{
+}
+
+#keys, #values{
+  position: relative;
+  bottom: 40px;
+  display: inline-block;
+}
+
+.create_song{
+  float: left;
+  margin-left: 5%;
+}
+
+@-webkit-keyframes myfifth {
+    0%     {background: #dcdcdc; right:500px; top:500px;}
+    100%   {background: rgba(237, 209, 26, 0.22); right:0px; top:0px;}
+}
+
+header {
+  padding-bottom: 2px;
+  background: #FEC428;
+  margin: auto;
+  border: 1px solid;
+  marging: auto;
+  text-align: center;
+  list-style: none;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 12px 5px 0px rgba(0,0,0,0.75);
+  /*-webkit-border-radius: 130px;
+  -webkit-border-bottom-right-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -moz-border-radius: 130px;
+  -moz-border-radius-bottomright: 30px;
+  -moz-border-radius-bottomleft: 30px;
+  border-radius: 130px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: rgba(178, 177, 177, 0.45);*/
+  position: relative;
+  -webkit-animation: mysecond 2s; /* Chrome, Safari, Opera*/
+  animation: mythird 2s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mysecond {
+    0%    {background: #dcdcdc; left:900px; top:0px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+.nav{
+  display: inline-block;
+  /*float: right;*/
+  list-style: none;
+  position: relative;
+  -webkit-animation: mythird 2s;
+  animation: mythird 2s;
+}
+
+@-webkit-keyframes mythird {
+    0%    {background: #dcdcdc; left:900px; top:0px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+#results{
+  text-align: center;
+  /*display: inline-block;*/
+}
+
+.user2{
+  border: 1px solid;
+  float: right;
+  display: inline-block;
+  position: relative;
+  bottom: 10px;
+  -webkit-animation: myfourth 2s; /* Chrome, Safari, Opera */
+  animation: myfourth 2s;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+
+@-webkit-keyframes myfourth {
+  0%    {background: #dcdcdc; left:500px; top:510px;}
+  100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+.user_dash{
+  background: #FEC428;
+  text-align: center;
+  margin: auto;
+  width: 90%;
+  display: inline-block;
+  position: relative;
+  -webkit-animation: myfourth 2s; /* Chrome, Safari, Opera */
+  animation: myfourth 2s;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+
+@-webkit-keyframes myfourth {
+  0%    {background: #dcdcdc; top:510px;}
+  100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+.navButton {
+  /*background-color: #700B0E;*/
+  position: relative;
+  top: 3px;
+  padding: 0px 7px 1px 7px;
+  border: 1px solid;
+  -webkit-border-radius: 70px;
+  -webkit-border-bottom-right-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -moz-border-radius: 70px;
+  -moz-border-radius-bottomright: 30px;
+  -moz-border-radius-bottomleft: 30px;
+  border-radius: 70px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navButton:hover {
+  background: #700B0E;
+}
+
+.devise_navigation .main_navigation{
+  /*display: inline-block;*/
+  border: 2px black solid;
+}
+
+.devise_navigation{
+  float: right;
+}
+
+.main_navigation{
+  float: left;
+  margin: auto;
+}
+
+
+
+.recording {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  width: 40%;
+  margin-left: 50%;
+}
+
+.clear{
+  display: block;
+  clear: both;
+}
+
+.container{
+  clear: both;
+  margin: auto;
+  padding: 2px;
+  max-width: 900px;
+  position: relative;
+  -webkit-animation: myfifth 2s; /* Chrome, Safari, Opera */
+  animation: myfifth 2s;
+  animation-direction: alternate;
+}
+
+  @-webkit-keyframes myfifth {
+    0%     {background: #dcdcdc; left:500px; top:000px;}
+    100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
+}
+
+div.page_content{
+  min-height: 500px;
+  background: asset-url('bench.jpg') 0 0;
+  background-size: cover;
+  padding: 20px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+body {
+    -webkit-animation: myfirst 225s; /* Chrome, Safari, Opera */
+    animation: myfirst 225s;
+}
