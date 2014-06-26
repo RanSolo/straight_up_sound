@@ -12,9 +12,9 @@
           =image_tag "suslogo.jpg"
         %ul.devise_navigation
         - if user_signed_in?
-          %li.nav= link_to 'Sign out', destroy_user_session_path, method: 'delete'
+          %li.nav.navButton= link_to 'Sign out', destroy_user_session_path, method: 'delete'
         - else
-          %li.nav= link_to 'Sign in', new_user_session_path
+          %li.nav.navButton= link_to 'Sign in', new_user_session_path
         %ul.main_navigation
           %li.nav.navButton= link_to 'dashboard', root_path
           %li.nav.navButton= link_to 'songs', songs_path

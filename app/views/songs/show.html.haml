@@ -1,19 +1,22 @@
 .container
-  %h1= @song.title
-  = render "shared/comment_form"
-  #comment_show
-  - @song.comments.each do |c|
-    - if c.commentable_type == "Songs"
-      %strong
-        posted #{time_ago_in_words(c.created_at)} ago
-        %p
-      = h(c.comment)
+  .sectionWrapper
+    %h1= @song.title
+    %p= @song.writers
+    = simple_format(@song.lyric)
+    = render "shared/comment_form"
+  .sectionWrapper
+    #comment_show
+    - @song.comments.each do |c|
+      - if c.commentable_type == "Songs"
+        %strong
+          posted #{time_ago_in_words(c.created_at)} ago
+          %p
+        = h(c.comment)
 
   %h2 Add recording
   #recording_form
   = render "shared/recording_form"
   %h3 Recordings booty
-
   #recordings_index
     - @song.recordings.each do |recording|
       %p= recording.name
@@ -34,14 +37,6 @@
               posted #{time_ago_in_words(c.created_at)} ago
               %p
             = h(c.comment)
-            -# %p
-
 
       =link_to "<<Back", songs_path
       =link_to "Edit", edit_song_path(@song.id)
-      -# = simple_form_for Comment.new do |f|
-      -#   = f.input :comment, as: :text
-      -#   = f.hidden_field :user_id, :value => current_user.id
-      -#   %p
-      -#   = f.button :submit, "Comment"
-      -#   %p

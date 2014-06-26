@@ -1,5 +1,7 @@
 .song
   =simple_form_for Song.new do |f|
     %p Create song
-    =f.input :title, label: false, placeholder: "Title"
+    =f.input :title, label: false, placeholder: "title"
+    =f.input :writers, label: false, placeholder: "writers"
+    =f.input :lyric, :as => :text, :input_html => {:size => "36x23"}, label: false, placeholder: "lyric"
     =f.submit "create song"

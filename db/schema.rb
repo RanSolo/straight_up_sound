@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625150602) do
+ActiveRecord::Schema.define(version: 20140626174251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 20140625150602) do
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "lyrics", force: true do |t|
+    t.string   "title"
+    t.string   "writers"
+    t.string   "publisher"
+    t.string   "text"
+    t.integer  "song_id"
+    t.integer  "commentable_id"
+    t.integer  "user_id"
+    t.string   "date_written"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "recordings", force: true do |t|
     t.integer  "song_id"
     t.string   "file"
@@ -64,6 +77,8 @@ ActiveRecord::Schema.define(version: 20140625150602) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "commentable_id"
+    t.text     "lyric"
+    t.string   "writers"
   end
 
   create_table "user_recordings", force: true do |t|

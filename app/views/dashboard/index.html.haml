@@ -1,13 +1,15 @@
 #user_dash
   %p #{@user.username.upcase}'s Dashboard: #{@user.last_name} #{@user.last_name} #{@user.phone} #{@user.email}
-  #songs.sectionWrapper
-    %h3 Songs
-    - @songs.each do |song|
-      %p= link_to song.title, song_path(song.id)
-  .create_song.sectionWrapper
-    = render "shared/song_form"
-  .clear
-    -# #recordings.sectionWrapper
+.clear
+.create_song.sectionWrapper
+  = render "shared/song_form"
+#songs.sectionWrapper
+  %h3 Songs
+  - @songs.each do |song|
+    %p= link_to song.title, song_path(song.id)
+
+.clear
+  -# #recordings.sectionWrapper
     -#   - @songs.each do |song|
     -#     - song.recordings.each do |recording|
     -#       %p= song.title
