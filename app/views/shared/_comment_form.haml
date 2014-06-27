@@ -3,5 +3,6 @@
     =simple_form_for Comment.new, :method => :post do |f|
       =f.input :comment, as: :text, :input_html => {:size => "38x2"}, label: false
       =f.input :commentable_type, :as => :hidden, :input_html => {:value => "Songs"}
+      =f.input :username, :as => :hidden, :input_html => {:value => "#{current_user.username}"}
       =f.input :commentable_id, :as => :hidden, :input_html => {:value => @song.id}
       =f.submit "make comment"

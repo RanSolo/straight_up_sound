@@ -14,14 +14,13 @@
         %strong
           = h(c.comment)
           <br>
-          posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
+          Posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago.
         <br>
         <br>
-  .sectionWrapper
+  #recordings.sectionWrapper
     %h3 Add recording
     #recording_form
     = render partial: "shared/recording_form"
-  .sectionWrapper
     %h3 Recordings booty
     #recordings_index
     - @song.recordings.each do |recording|
@@ -39,8 +38,12 @@
         - @song.comments.each do |c|
           - if c.commentable_type == "Recording" && c.title == recording.name
             %strong
-              posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
-            = h(c.comment)
+              = h(c.comment)
+              <br>
+              Posted by #{@comment.username} #{time_ago_in_words(c.created_at)} ago.
+              <br>
+              <br>
+
   -# .sectionWrapper.lyric
   -#
   -#   %h3= @song.title

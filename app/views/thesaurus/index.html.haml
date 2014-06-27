@@ -1,17 +1,18 @@
-.song
-  .contentWrapper
-    = form_tag("/thesaurus", method: "get") do
-      = text_field_tag(:q)
-      = submit_tag("Thesaurus")
-    .contentWrapper
-      %form{action: "javascript:RhymeBrainSubmit()"}
-        %input#RhymeBrainInput{type: "text"}/
-        %input{type: "submit", value: "Rhyme"}/
-        :javascript
-          var RhymeBrainMaxResults = 50;
-        %script{src: "http://rhymebrain.com/external.js", type: "text/javascript"}
-#contentWrapper
+.space
+.space
 
+.sectionWrapper
+  = form_tag("/thesaurus", method: "get") do
+    = text_field_tag(:q)
+    = submit_tag("Thesaurus")
+  .contentWrapper
+    %form{action: "javascript:RhymeBrainSubmit()"}
+      %input#RhymeBrainInput{type: "text"}/
+      %input{type: "submit", value: "Rhyme"}/
+      :javascript
+        var RhymeBrainMaxResults = 50;
+      %script{src: "http://rhymebrain.com/external.js", type: "text/javascript"}
+  .sectionWrapper
   - @results.each do |key, value|
     -value.each do |k,v|
       <br />

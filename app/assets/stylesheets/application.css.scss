@@ -22,9 +22,16 @@ a:hover, a:active{
   text-decoration: underline;
   color: #FEC428;
 }
+
+form input{
+  max-width: 50%;
+}
+#recordings{
+  float: right;
+}
 form input[type=submit]{
   text-align: center;
-  width: 100%;
+  max-width: 51%;
   border-top: 1px solid #96d1f8;
   background: #700B0E;
   background: -webkit-gradient(linear, left top, left bottom, from(#FEC428), to(#700B0E));
@@ -57,6 +64,7 @@ form input[type=submit]:active{
   background: #1b435e;
 }
 .button{
+   max-width: 500px;
    border-top: 1px solid #96d1f8;
    background: #700B0E;
    background: -webkit-gradient(linear, left top, left bottom, from(#FEC428), to(#700B0E));
@@ -88,15 +96,16 @@ form input[type=submit]:active{
    background: #1b435e;
 }
 body {
-  background: asset-url('skin.jpg') 0 0 repeat;
+  background: asset-url('skin.jpg') 0 0 repeat fixed;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
   margin: 0px;
   padding: 0px;
-  height: 1500px;
 }
 
 .sectionWrapper{
+  margin-left: 3%;
+  margin-right: 3%;
   /*float: right;*/
   display: inline-block;
   // padding:20%;
@@ -109,7 +118,8 @@ body {
   animation-direction: alternate;
   background: rgba(255, 174, 44, 0.72);
   padding: 10px;
-  width: 30%;
+  min-width: 20%;
+  max-width: 40%;
 }
 
 #songs{
@@ -176,7 +186,9 @@ header {
     0%    {background: #dcdcdc; left:900px; top:0px;}
     100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
 }
-
+#sign_up{
+  margin-left: 30%;
+}
 .nav{
   display: inline-block;
   /*float: right;*/
@@ -255,7 +267,7 @@ header {
 100%   {background: rgba(237, 209, 26, 0.22); left:0px; bottom:50px;}
 }
 audio{
-  max-width: 250px
+  max-width: 260px
 }
 .navButton {
   position: relative;
@@ -309,6 +321,7 @@ audio{
   margin: auto;
   padding: 2px;
   max-width: 900px;
+  // height: 1700px;
   position: relative;
   -webkit-animation: myfifth 2s; /* Chrome, Safari, Opera */
   animation: myfifth 2s;
@@ -323,7 +336,7 @@ audio{
 
 div.page_content{
   max-width: 900px;
-  min-height: 700px;
+  min-height: 500px;
   background: asset-url('bench.jpg') no-repeat top fixed ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
