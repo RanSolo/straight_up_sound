@@ -1,0 +1,9 @@
+
+.sectionWrapper
+  #edit_song
+    =simple_form_for @song do |f|
+      %p edit song
+      =f.input :title, label: false, placeholder: "title", :input_html => {:maxlength =>55,:style=> 'width: 245px'}
+      =f.input :writers, label: false, placeholder: "writers", :input_html => {:maxlength =>55,:style=> 'width: 245px'}
+      =f.input :lyric, :as => :text, :input_html => {:size => "36x23"}, label: false, placeholder: "lyric"
+      =f.submit "edit song"

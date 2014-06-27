@@ -14,11 +14,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     if @comment.save
       flash[:notice] = "Your comment has been created"
-      redirect_to songs_path
+      redirect_to song_path(@comment.commentable_id)
     else
       flash[:alert] = "Your comment could not be created"
-        # render comments_index_path
-      redirect_to songs_path
+      redirect_to song_path(@comment.commentable_id)
     end
   end
 

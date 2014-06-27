@@ -5,6 +5,6 @@
     #songs
       %h1 Songs
       - @songs.each do |song|
-        %p= link_to song.title, song_path(song.id)
+        .button= link_to song.title, song_path(song.id)
     .create_song
       = render "shared/song_form"

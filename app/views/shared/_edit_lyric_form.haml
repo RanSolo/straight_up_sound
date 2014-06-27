@@ -1,0 +1,4 @@
+#edit_lyric
+  =simple_form_for @song do |f|
+    =f.input :lyric, :as => :text, :input_html => {:size => "38x23"}, label: false, placeholder: "lyric"
+    =f.submit "Submit edit", :input_html => {:class => "button"}

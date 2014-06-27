@@ -1,24 +1,11 @@
 #user_dash
   %p #{@user.username.upcase}'s Dashboard: #{@user.last_name} #{@user.last_name} #{@user.phone} #{@user.email}
 .clear
+.space
 .create_song.sectionWrapper
   = render "shared/song_form"
 #songs.sectionWrapper
   %h3 Songs
   - @songs.each do |song|
     %p= link_to song.title, song_path(song.id)
-
 .clear
-  -# #recordings.sectionWrapper
-    -#   - @songs.each do |song|
-    -#     - song.recordings.each do |recording|
-    -#       %p= song.title
-    -#       %h5 Recordings
-    -#       %p= recording.created_at
-    -#       %p= recording.play_count
-    -#       .player
-    -#         <audio controls>
-    -#         <source src="#{recording.file_url}" type="audio/mp3">
-    -#         <source src="#{recording.file_url}" type="audio/mpeg">
-    -#         Your browser does not support the audio element.
-    -#         </audio>

@@ -1,41 +1,49 @@
 .container
+  #user_dash
+    %p #{current_user.username.upcase}'s working song #{current_user.last_name} #{current_user.last_name} #{current_user.phone} #{current_user.email}
+  .space
   .sectionWrapper
-    %h1= @song.title
+    %h3= @song.title
+    .button= link_to "Edit song", edit_song_path(@song)
     %p= @song.writers
-    = simple_format(@song.lyric)
-    = render "shared/comment_form"
-    .sectionWrapper
-      #comment_show
-      - @song.comments.each do |c|
-        - if c.commentable_type == "Songs"
-          %strong
-            posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
-            %p
+    = render partial: "shared/edit_lyric_form"
+    = render partial: "shared/comment_form"
+    #comment_show
+    - @song.comments.each do |c|
+      - if c.commentable_type == "Songs"
+        %strong
           = h(c.comment)
+          <br>
+          posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
+        <br>
+        <br>
   .sectionWrapper
-    %h2 Add recording
+    %h3 Add recording
     #recording_form
-    = render "shared/recording_form"
+    = render partial: "shared/recording_form"
   .sectionWrapper
     %h3 Recordings booty
     #recordings_index
-      - @song.recordings.each do |recording|
-        %p= recording.name
-        <audio controls="controls">
-        <source src="#{recording.file_url}" type="audio/mp3">
-        <source src="#{recording.file_url}" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>
-        .song
-          = render partial: "shared/rec_comment_form", locals: {recording: recording}
-        %small #{recording.created_at}
-        %h4 Comments:
-        #comment_show
-          - @song.comments.each do |c|
-            - if c.commentable_type == "Recording" && c.title == recording.name
-              %strong
-                posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
-                %p
-              = h(c.comment)
-      -# =link_to "<<Back", songs_path
-      -# =link_to "Edit", edit_song_path(@song.id)
+    - @song.recordings.each do |recording|
+      %p= recording.name
+      <audio controls="controls">
+      <source src="#{recording.file_url}" type="audio/mp3">
+      <source src="#{recording.file_url}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      .song
+      = render partial: "shared/rec_comment_form", locals: {recording: recording}
+      %small #{recording.created_at}
+      %h4 Comments:
+      #comment_show
+        - @song.comments.each do |c|
+          - if c.commentable_type == "Recording" && c.title == recording.name
+            %strong
+              posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago
+            = h(c.comment)
+  -# .sectionWrapper.lyric
+  -#
+  -#   %h3= @song.title
+  -#   .button= link_to "Edit song", edit_song_path(@song)
+  -#   %p= @song.writers
+  -#   = simple_format(@song.lyric)
