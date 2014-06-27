@@ -34,7 +34,7 @@
       = render partial: "shared/rec_comment_form", locals: {recording: recording}
       %small #{recording.created_at}
       %h4 Comments:
-      #comment_show
+      #comment_show booty
         - @song.comments.each do |c|
           - if c.commentable_type == "Recording" && c.title == recording.name
             %strong
