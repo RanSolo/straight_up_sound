@@ -14,7 +14,7 @@
         %strong
           = h(c.comment)
           <br>
-          Posted by #{current_user.username} #{time_ago_in_words(c.created_at)} ago.
+          Posted by #{c.username} #{time_ago_in_words(c.created_at)} ago.
         <br>
         <br>
   #recordings.sectionWrapper
@@ -40,7 +40,7 @@
             %strong
               = h(c.comment)
               <br>
-              Posted by #{@comment.username} #{time_ago_in_words(c.created_at)} ago.
+              Posted by #{c.username} #{time_ago_in_words(c.created_at)} ago.
               <br>
               <br>
 
