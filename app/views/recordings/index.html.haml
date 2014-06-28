@@ -1,13 +1,13 @@
-.container
-  #user
-    %h1 User
-    %p #{current_user.first_name} #{current_user.last_name}
-    %p= current_user.username
-    %p= current_user.phone
-    %p= current_user.email
 
-  #songs
-    %h1 Songs
+#user
+  %h1 User
+  %p #{current_user.first_name} #{current_user.last_name}
+  %p= current_user.username
+  %p= current_user.phone
+  %p= current_user.email
 
-    - @songs.each do |song|
-      %p= link_to song.title, song_path(song.id)
+#songs
+  %h1 Songs
+
+  - @songs.each do |song|
+    %p= link_to song.title, song_path(song.id)

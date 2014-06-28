@@ -1,6 +1,6 @@
 .space
 .space
-#sign_up.sectionWrapper
+#sign_up.sectionWrapper.margin_left
   - if resource.errors
     .alert Your account could not be created.
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|

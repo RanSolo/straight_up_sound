@@ -1,7 +1,7 @@
 .space
 .space
 
-.sectionWrapper
+.sectionWrapper.margin_left
   = form_tag("/thesaurus", method: "get") do
     = text_field_tag(:q)
     = submit_tag("Thesaurus")
@@ -12,7 +12,8 @@
       :javascript
         var RhymeBrainMaxResults = 50;
       %script{src: "http://rhymebrain.com/external.js", type: "text/javascript"}
-  .sectionWrapper
+  .sectionWrapper.text_center.margin_left
+
   - @results.each do |key, value|
     -value.each do |k,v|
       <br />

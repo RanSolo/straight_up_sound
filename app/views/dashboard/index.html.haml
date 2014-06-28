@@ -1,10 +1,10 @@
-#user_dash
+#user_dash.text_center
   %p #{@user.username.upcase}'s Dashboard: #{@user.last_name} #{@user.last_name} #{@user.phone} #{@user.email}
 .clear
 .space
-.create_song.sectionWrapper
+.create_song.sectionWrapper.left.margin_left
   = render "shared/song_form"
-#songs.sectionWrapper
+#songs.sectionWrapper.right.margin_auto.margin_right
   %h3 Songs
   - @songs.each do |song|
     %p= link_to song.title, song_path(song.id)

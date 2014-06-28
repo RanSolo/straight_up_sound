@@ -1,10 +1,10 @@
 .container
   #user
-  .user_dash
+  .user_dash.margin_auto.text_center
     %p #{current_user.username.upcase}'s working songs #{current_user.last_name} #{current_user.last_name} #{current_user.phone} #{current_user.email}
     #songs
       %h1 Songs
       - @songs.each do |song|
         .button= link_to song.title, song_path(song.id)
-    .create_song
+    .create_song.left
       = render "shared/song_form"

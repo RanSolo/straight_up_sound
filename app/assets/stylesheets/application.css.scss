@@ -2,20 +2,51 @@
 @import url(http://fonts.googleapis.com/css?family=Diplomata+SC);
 $bright: #FEC428;
 $dark: #700B0E;
+
+
 h3{
   font-family: 'Diplomata SC', cursive;
   color: $dark;
 }
+/////// helpers////////
 .right{
-  float:right;
+  float: right;
 }
+
 .left{
-  float:left;
+  float: left;
 }
+.margin_auto{
+  margin: auto;
+}
+.margin_left{
+  margin-left: 2%;
+}
+.margin_right{
+  margin-right: 2%
+}
+
+.space{
+  width: 100%;
+  height: 50px;
+}
+.bump{
+  width: 100;
+  height: 5px;
+}
+
+.nudge{
+  width: 100%;
+  height: 1px;
+}
+.text_center{
+  text-align: center;
+}
+//////end helpers/////
+
 a, a:visited{
   text-decoration: none;
   color: #700B0E;
-  /*background-color: #700B0E;*/
 }
 
 a:hover, a:active{
@@ -26,9 +57,7 @@ a:hover, a:active{
 form input{
   max-width: 50%;
 }
-#recordings{
-  float: right;
-}
+
 form input[type=submit]{
   text-align: center;
   max-width: 51%;
@@ -95,6 +124,7 @@ form input[type=submit]:active{
    border-top-color: #1b435e;
    background: #1b435e;
 }
+
 body {
   background: asset-url('skin.jpg') 0 0 repeat fixed;
   font-family: 'Source Sans Pro', sans-serif;
@@ -105,11 +135,7 @@ body {
 }
 
 .sectionWrapper{
-  margin-left: 3%;
-  margin-right: 3%;
-  /*float: right;*/
   display: inline-block;
-  // padding:20%;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
@@ -119,17 +145,29 @@ body {
   animation-direction: alternate;
   background: rgba(255, 174, 44, 0.72);
   padding: 10px;
-  min-width: 20%;
-  max-width: 40%;
+  min-width: 45%;
+  max-width: 45%;
+}
+
+.largeSectionWrapper{
+  display: inline-block;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  position: relative;
+  -webkit-animation: myfifth 2s; /* Chrome, Safari, Opera */
+  animation: myfifth 2s;
+  animation-direction: alternate;
+  background: rgba(255, 174, 44, 0.72);
+  padding: 10px;
+  width: 75%
 }
 
 #songs{
-  float: right;
   margin-right: 10%;
 }
 
 #user{
-  margin: auto;
   display: inline-block;
   width: 103%;
   padding: 5px;
@@ -151,13 +189,8 @@ body {
   bottom: 40px;
   display: inline-block;
 }
-.space{
-  width: 100%;
-  height: 50px;
-}
 
 .create_song{
-  float: left;
   margin-left: 5%;
 }
 
@@ -171,15 +204,12 @@ header {
   z-index: 1;
   position: fixed;
   width: 88%;
-  height: 65px;
+  height: 64px;
   padding-bottom: 2px;
   background: #FEC428;
-  margin: auto;
   border: 1px solid;
   marging: auto;
-  text-align: center;
   list-style: none;
-
 }
 
 /* Chrome, Safari, Opera */
@@ -192,7 +222,6 @@ header {
 }
 .nav{
   display: inline-block;
-  /*float: right;*/
   list-style: none;
   position: relative;
   -webkit-animation: mythird 2s;
@@ -209,28 +238,8 @@ header {
   /*display: inline-block;*/
 }
 
-.user2{
-  border: 1px solid;
-  float: right;
-  display: inline-block;
-  position: relative;
-  bottom: 10px;
-  -webkit-animation: myfourth 2s; /* Chrome, Safari, Opera */
-  animation: myfourth 2s;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-}
-
-@-webkit-keyframes myfourth {
-  0%    {background: #dcdcdc; left:500px; top:510px;}
-  100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
-}
-
 .user_dash{
   background: #FEC428;
-  text-align: center;
-  margin: auto;
   width: 90%;
   display: inline-block;
   position: relative;
@@ -248,7 +257,6 @@ header {
 
 #user_dash{
   z-index: 0;
-  text-align: center;
   background-color: #FEC428;
   position: relative;
   top: 54px;
@@ -267,9 +275,11 @@ header {
 0%    {background: #dcdcdc; top:1110px;}
 100%   {background: rgba(237, 209, 26, 0.22); left:0px; bottom:50px;}
 }
+
 audio{
   max-width: 260px
 }
+
 .navButton {
   position: relative;
   bottom: 7px;
@@ -295,12 +305,7 @@ audio{
   border: 2px white solid;
 }
 
-.devise_navigation{
-  float: right;
-}
-
 .main_navigation{
-  float: left;
   margin: auto;
 }
 
@@ -351,7 +356,3 @@ div.page_content{
 // form#new_song{
 //   postition: fixed;
 // }
-body {
-    -webkit-animation: myfirst 225s; /* Chrome, Safari, Opera */
-    animation: myfirst 225s;
-}

@@ -3,23 +3,27 @@
   %head
     %title StraightUpSound
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     .container
-      %header
+      %header.margin_auto.text_center
         #logo
           =image_tag "suslogo.jpg"
-        %ul.devise_navigation
+        %ul.devise_navigation.right
         - if user_signed_in?
+          .nudge
           %li.nav.navButton= link_to 'Sign out', destroy_user_session_path, method: 'delete'
         - else
           %li.nav.navButton= link_to 'Sign in', new_user_session_path
-        %ul.main_navigation
+        %ul.main_navigation.left.margin_auto
           %li.nav.navButton= link_to 'dashboard', root_path
           %li.nav.navButton= link_to 'thesaurus/rhymes', thesaurus_path
           %li.nav.navButton= link_to 'Straight Up Sound', 'http://www.straightupsoundstudio.com'
-
+      .bump
+      .bump
+      .nudge
       .page_content
         .alert= alert
         .notice= notice

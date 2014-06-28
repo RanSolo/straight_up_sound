@@ -26,18 +26,6 @@ class RecordingsController < ApplicationController
     @song = Song.find(params[:id])
   end
 
-  def update
-    @song = Song.find(params[:id])
-    if @song.update(content: params[:song][:content], published: params[:song][:published])
-      redirect_to songs_path@song, notice: "Your song has been updated!"
-    else
-      flash[:alert] = @song.published ? "Your song could not be created." : "Your song could not be saved."
-      render :new
-    end
-  end
-
-
-
   private
 
   def recording_params
