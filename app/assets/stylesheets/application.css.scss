@@ -3,7 +3,6 @@
 $bright: #FEC428;
 $dark: #700B0E;
 
-
 h3{
   font-family: 'Diplomata SC', cursive;
   color: $dark;
@@ -16,22 +15,33 @@ h3{
 .left{
   float: left;
 }
+
 .margin_auto{
   margin: auto;
 }
+
 .margin_left{
   margin-left: 2%;
 }
-.margin_right{
-  margin-right: 2%
-}
 
+.margin_right{
+  margin-right: 2%;
+}
+.box_shadow{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 .space{
   width: 100%;
   height: 50px;
 }
+.big_bump{
+  width: 100%;
+  height: 10px;
+}
 .bump{
-  width: 100;
+  width: 100%;
   height: 5px;
 }
 
@@ -41,6 +51,9 @@ h3{
 }
 .text_center{
   text-align: center;
+}
+.flash_alert{
+  background: #FEC428;
 }
 //////end helpers/////
 
@@ -55,7 +68,7 @@ a:hover, a:active{
 }
 
 form input{
-  max-width: 50%;
+  max-width: 90%;
 }
 
 form input[type=submit]{
@@ -145,7 +158,7 @@ body {
   animation-direction: alternate;
   background: rgba(255, 174, 44, 0.72);
   padding: 10px;
-  min-width: 45%;
+  min-width: 300px;
   max-width: 45%;
 }
 
@@ -161,10 +174,6 @@ body {
   background: rgba(255, 174, 44, 0.72);
   padding: 10px;
   width: 75%
-}
-
-#songs{
-  margin-right: 10%;
 }
 
 #user{
@@ -200,10 +209,10 @@ body {
 }
 
 header {
-  max-width: 900px;
+  max-width: 75%;
   z-index: 1;
   position: fixed;
-  width: 88%;
+  width: 100%;
   height: 64px;
   padding-bottom: 2px;
   background: #FEC428;
@@ -239,6 +248,7 @@ header {
 }
 
 .user_dash{
+  z-index: 1;
   background: #FEC428;
   width: 90%;
   display: inline-block;
@@ -256,11 +266,10 @@ header {
 }
 
 #user_dash{
-  z-index: 0;
+  z-index: 1;
+  margin-top: 5px;
   background-color: #FEC428;
-  position: relative;
-  top: 54px;
-  padding: 0px 3px;
+  padding: 0px 0px 0px 8px;
   -webkit-animation: myfourth 2s; /* Chrome, Safari, Opera */
   animation: myfourth 2s;
   -webkit-border-bottom-right-radius: 25px;
@@ -282,7 +291,7 @@ audio{
 
 .navButton {
   position: relative;
-  bottom: 7px;
+  bottom: 5px;
   padding: 0px 7px 1px 7px;
   border: 1px solid;
   -webkit-border-radius: 70px;
@@ -300,15 +309,6 @@ audio{
   background: #700B0E;
 }
 
-.devise_navigation .main_navigation{
-  /*display: inline-block;*/
-  border: 2px white solid;
-}
-
-.main_navigation{
-  margin: auto;
-}
-
 .recording {
   background: #333;
   color: #fff;
@@ -323,10 +323,10 @@ audio{
 }
 
 .container{
+  max-width: 75%;
   clear: both;
   margin: auto;
   padding: 2px;
-  max-width: 900px;
   position: relative;
   -webkit-animation: myfifth 2s; /* Chrome, Safari, Opera */
   animation: myfifth 2s;
@@ -338,10 +338,8 @@ audio{
     100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
 }
 
-
 div.page_content{
-  max-width: 900px;
-  min-height: 500px;
+  min-height: 1000px;
   background: asset-url('bench.jpg') no-repeat top fixed ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -352,7 +350,38 @@ div.page_content{
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-
+div.middle{
+  width: 100%;
+  height: 200px;
+  background: black;
+}
+.middle_content{
+  min-height: 500px;
+  background: asset-url('bg.jpg') no-repeat top fixed ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.third_content{
+  min-height: 500px;
+  background: asset-url('JohnNeel.jpg') no-repeat top fixed ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+#logo{
+  // width: 50%
+}
 // form#new_song{
 //   postition: fixed;
 // }

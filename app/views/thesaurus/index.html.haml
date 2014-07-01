@@ -12,8 +12,7 @@
       :javascript
         var RhymeBrainMaxResults = 50;
       %script{src: "http://rhymebrain.com/external.js", type: "text/javascript"}
-  .sectionWrapper.text_center.margin_left
-
+  .sectionWrapper.text_center
   - @results.each do |key, value|
     -value.each do |k,v|
       <br />

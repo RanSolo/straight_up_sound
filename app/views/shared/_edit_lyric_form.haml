@@ -1,4 +1,7 @@
-#edit_lyric
+#edit_lyric.margin_left
   =simple_form_for @song do |f|
-    =f.input :lyric, :as => :text, :input_html => {:size => "38x23"}, label: false, placeholder: "lyric"
-    =f.submit "Submit edit", :input_html => {:class => "button"}
+    =f.input :song_id, :as => :hidden, :input_html => {:value => @song.id}
+    =f.input :writers, :as=> :hidden, :input_html => {:value =>@song.writers}
+    =f.input :title, :as=> :hidden, :input_html => {:value =>@song.title}
+    =f.input :lyric, :as => :text, :input_html => {:size => "36x23"}, label: false, placeholder: "lyric"
+    =f.submit "edit song"
