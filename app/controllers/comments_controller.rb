@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:title, :username, :recording_id, :song_id, :comment, :commentable_id, :commentable_type, :user_id)
+    params.require(:comment).permit(:title, :authenticity_token, :username, :recording_id, :song_id, :comment, :commentable_id, :commentable_type, :user_id)
   end
 end
 #<Comment id: nil, title: "", comment: "something about something", commentable_id: 31, commentable_type: nil, user_id: nil, role: "comments", created_at: nil, updated_at: nil>
