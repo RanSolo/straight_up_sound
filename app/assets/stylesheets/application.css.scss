@@ -210,8 +210,8 @@ body {
 
 header {
   max-width: 75%;
-  z-index: 1;
   position: fixed;
+  z-index: 1;
   width: 100%;
   height: 64px;
   padding-bottom: 2px;
@@ -248,7 +248,7 @@ header {
 }
 
 .user_dash{
-  z-index: 1;
+  // z-index: 1;
   background: #FEC428;
   width: 90%;
   display: inline-block;
@@ -265,8 +265,14 @@ header {
   100%   {background: rgba(237, 209, 26, 0.22); left:0px; top:0px;}
 }
 
-#user_dash{
+.alert{
+  position: fixed;
   z-index: 1;
+}
+#user_dash{
+  width: 99%;
+  position: absolute;
+  z-index: 0;
   margin-top: 5px;
   background-color: #FEC428;
   padding: 0px 0px 0px 8px;
@@ -279,7 +285,17 @@ header {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
 }
-
+div.flash_alert{
+  position: fixed;
+  z-index: 1;
+  padding: 0px 10px 0px 10px;
+  -webkit-border-bottom-right-radius: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  -moz-border-radius-bottomright: 25px;
+  -moz-border-radius-bottomleft: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
 @-webkit-keyframes myfourth {
 0%    {background: #dcdcdc; top:1110px;}
 100%   {background: rgba(237, 209, 26, 0.22); left:0px; bottom:50px;}
@@ -370,6 +386,18 @@ div.middle{
 .third_content{
   min-height: 500px;
   background: asset-url('JohnNeel.jpg') no-repeat top fixed ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.fourth_content{
+  min-height: 500px;
+  background: asset-url('johnny.jpg') no-repeat top fixed ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
