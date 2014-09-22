@@ -6,10 +6,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :username, uniqueness: true
-    validates :username, uniqueness: true,
-              format: { with: /\A[a-zA-Z0-9]+\z/,
-              message: "username can only contain letters and numbers"}
+  validates :username, uniqueness: true,
+            format: { with: /\A[a-zA-Z0-9]+\z/,
+            message: "username can only contain letters and numbers"}
 
   has_many :user_songs
   has_many :songs, through: :user_songs

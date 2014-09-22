@@ -1,12 +1,12 @@
-  #user
-    %h1 User
-    %p #{current_user.first_name} #{current_user.last_name}
-    %p= current_user.username
-    %p= current_user.phone
-    %p= current_user.email
+      #user
+        %h1 User
+        %p #{current_user.first_name} #{current_user.last_name}
+        %p= current_user.username
+        %p= current_user.phone
+        %p= current_user.email
 
-  #songs
-    %h1 Songs
-    - current_user.songs.each do |song|
-      %p= song.title
-      -# %p= song.comment
+      #songs
+        %h1 Songs
+        - current_user.songs.each do |song|
+          %p= song.title
+          -# %p= song.comment
