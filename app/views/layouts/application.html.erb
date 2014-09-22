@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>StraightUpSound</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <header class="margin_auto text_center box_shadow">
+        <div id="logo">
+          <%= image_tag "suslogo.jpg" %>
+        </div>
+        <ul class="devise_navigation right"></ul>
+        <% if user_signed_in? %>
+          <div class="nudge"></div>
+          <li class="nav navButton right">
+            <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+          </li>
+        <% else %>
+          <li class="nav navButton">
+            <%= link_to 'Sign in', new_user_session_path %>
+          </li>
+        <% end %>
+        <ul class="main_navigation left margin_auto">
+          <li class="nav navButton">
+            <%= link_to 'Dashboard', root_path %>
+          </li>
+          <li class="nav navButton">
+            <%= link_to 'tools', thesaurus_path %>
+          </li>
+          <li class="nav navButton">
+            <%= link_to 'Straight Up Sound', 'http://www.straightupsoundstudio.com' %>
+          </li>
+        </ul>
+      </header>
+      <div class="space"></div>
+      <div class="big_bump"></div>
+      <div class="bump"></div>
+      <div class="page_content">
+        <div class="flash_alert text_center box_shadow">
+          <div class="alert background_color_saffron">
+            <%= alert %>
+          </div>
+          <div class="notice">
+            <%= notice %>
+          </div>
+        </div>
+        <%= yield %>
+      </div>
+      <div class="middle box_shadow"></div>
+      <div class="middle_content"></div>
+      <div class="middle box_shadow"></div>
+      <div class="third_content"></div>
+      <div class="middle box_shadow"></div>
+      <div class="fourth_content"></div>
+    </div>
+  </body>
+</html>

@@ -1,16 +1,16 @@
-.space
-.space
-#sign_up.sectionWrapper.margin_left
-  - if resource.errors
-    .alert Your account could not be created.
-  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = f.input :email, label: false, placeholder: "email", autofocus: true
-    = f.input :phone, label: false, placeholder: "phone"
-    = f.input :username, label: false, placeholder: "username"
-    = f.input :first_name, label: false, placeholder: "first name"
-    = f.input :last_name, label: false, placeholder: "last name"
-    = f.input :password,  label: false,placeholder: "password"
-    = f.input :password_confirmation, label: false, placeholder: "retype password"
-    = f.button :submit, "Sign up"
+        .space
+        .space
+        #sign_up.sectionWrapper.margin_left
+          - if resource.errors
+            .alert Your account could not be created.
+          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = f.input :email, label: false, placeholder: "email", autofocus: true
+            = f.input :phone, label: false, placeholder: "phone"
+            = f.input :username, label: false, placeholder: "username"
+            = f.input :first_name, label: false, placeholder: "first name"
+            = f.input :last_name, label: false, placeholder: "last name"
+            = f.input :password,  label: false,placeholder: "password"
+            = f.input :password_confirmation, label: false, placeholder: "retype password"
+            = f.button :submit, "Sign up"
 
-  = render "devise/shared/links"
+          = render "devise/shared/links"

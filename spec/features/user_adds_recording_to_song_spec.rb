@@ -8,7 +8,7 @@ feature "New recordings to song" do
     click_button "create song"
     page.should have_content "Your song has been created"
     page.should have_content "Blowing in the Wind"
-    fill_in "Name", with: "work tape"
+    fill_in "name", with: "work tape"
     attach_file "File", "spec/data/east_nasty.mp3"
     click_button "create recording"
     page.should have_content "Your recording has been created"

@@ -2,10 +2,15 @@
   %p #{@user.username.upcase}'s dashboard: #{@user.last_name} #{@user.last_name} #{@user.phone} #{@user.email}
 .clear
 .space
-.create_song.largeSectionWrapper.left.margin_left
-  = render "shared/song_form"
-#songs.sectionWrapper.margin_auto.margin_right
-  %h3 Songs
-  - @songs.each do |song|
-    %p= link_to song.title, song_path(song.id)
-.clear
+if current_user.producer == true
+  .users
+    - @users.each do |user|
+      %p= link_to user.name, user_path(user.id)
+
+  -# .create_song.largeSectionWrapper.left.margin_left
+  -#   = render "shared/song_form"
+  -# #songs.sectionWrapper.margin_auto.margin_right
+  -#   %h3 Songs
+  -#   - @songs.each do |song|
+  -#     %p= link_to song.title, song_path(song.id)
+  -# .clear

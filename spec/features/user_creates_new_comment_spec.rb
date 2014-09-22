@@ -6,7 +6,8 @@ feature "New comments" do
     login_as Fabricate(:user, email: "ruby@example.com", username: "ruby")
     fill_in "title", with: "Text input with body for test!"
     click_button "create song"
-    fill_in "Comment", with: "Text input comment body for test"
+    fill_in "comment_comment", with: "Text input comment body for test"
+    click_button "make comment"
     page.should have_content "Text input with body for test!"
     page.should have_content "Text input comment body for test"
   end

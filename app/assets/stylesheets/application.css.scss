@@ -300,7 +300,10 @@ div.flash_alert{
 0%    {background: #dcdcdc; top:1110px;}
 100%   {background: rgba(237, 209, 26, 0.22); left:0px; bottom:50px;}
 }
-
+.users{
+  width: 100%;
+  border: solid 3px;
+}
 audio{
   max-width: 260px
 }

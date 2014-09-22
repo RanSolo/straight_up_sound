@@ -38,7 +38,6 @@ feature "User signs up" do
     fill_in "password", with: "mypassword"
     fill_in "retype password", with: "notthesame"
     click_button "Sign up"
-    page.should_not have_content "Dashboard"
     page.should have_content "Your account could not be created"
 
     page.should have_error("has already been taken", on: "email")
@@ -54,7 +53,6 @@ feature "User signs up" do
     fill_in "password", with: "mypassword"
     fill_in "retype password", with: "mypassword"
     click_button "Sign up"
-    page.should_not have_content "Dashboard"
     page.should have_content "Your account could not be created"
     page.should have_error("can only contain letters", on: "username")
   end

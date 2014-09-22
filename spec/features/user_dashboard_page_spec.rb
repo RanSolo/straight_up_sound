@@ -28,6 +28,5 @@ feature "User visits dashboard page" do
     visit user_path(johnny)
     page.should_not have_content "neely@neely.com"
     page.should_not have_content "ransolo@me.com"
-    page.should_not have_content "Dashboard"
   end
 end
